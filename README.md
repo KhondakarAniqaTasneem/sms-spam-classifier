@@ -91,16 +91,6 @@ ROC-AUC	How well the model separates spam from ham (1.0 = perfect)
 
 Extras included: error analysis (the misclassified messages), decision-threshold tuning, and the top spam/ham features learned by the SVM.
 
-5. What was improved vs. a basic version
-Basic approach	This system
-Deletes digits, links, punctuation	Converts them into tokens, so the clues are kept
-Removes stopwords and lemmatizes	Keeps the text light
-Word TF-IDF only	Word + character TF-IDF
-Plain SVM	SVM with balanced class weights
-Tuned for accuracy	Tuned for F1
-Cross-validation on all data (leakage)	Cross-validation on training data only
-
-The notebook trains both the baseline and the improved model on the same split and prints a comparison table.
 
 6. Results
 
@@ -111,11 +101,6 @@ Accuracy
 Precision		
 Recall		
 F1		
-7. How to run
-Open SMS_Spam_SVM_Improved.ipynb in Google Colab.
-Download the dataset from Kaggle and rename it to SMS.csv.
-Run the cells in order. When the upload cell appears, click Choose Files and select SMS.csv.
-Wait for the upload to finish, then run the remaining cells.
 
 Libraries used: pandas, numpy, matplotlib, seaborn, nltk, wordcloud, scikit-learn, joblib
 
